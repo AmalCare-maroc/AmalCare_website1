@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amal Care — Aide à domicile spécialisée Alzheimer | Rabat-Salé-Kénitra, Maroc</title>
+<meta name="description" content="Amal Care : première agence marocaine spécialisée dans l'accompagnement à domicile des patients Alzheimer. Aides formées, suivi personnalisé. Rabat · Salé · Kénitra · Taourirt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:       #006B6B;
+    --teal-light: #00A3A3;
+    --teal-pale:  #E8F7F7;
+    --gold:       #C8952A;
+    --gold-light: #F0D080;
+    --gold-pale:  #FDF7EC;
+    --navy:       #0D1F2D;
+    --cream:      #FAF8F4;
+    --text:       #2C3E50;
+    --muted:      #7F8C8D;
+    --white:      #FFFFFF;
+    --r:          16px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 40px;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,107,107,0.12);
+    transition: all .3s;
+  }
+
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-text .en { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--navy); letter-spacing: 2px; line-height: 1; }
+  .logo-text .ar { font-family: 'Noto Naskh Arabic', serif; font-size: 12px; color: var(--gold); line-height: 1.4; }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; transition: color .2s; position: relative; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--teal); transition: width .3s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--teal); color: white;
+    padding: 10px 24px; border-radius: 50px;
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: all .2s; white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--teal-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,107,107,0.3); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+    gap: 0; padding: 0;
+    position: relative; overflow: hidden;
+  }
+
+  .hero-left {
+    padding: 140px 60px 80px 80px;
+    position: relative; z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal-pale); border: 1px solid rgba(0,107,107,0.2);
+    color: var(--teal); padding: 6px 16px; border-radius: 50px;
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 28px;
+  }
+  .hero-tag span { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
+
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .hero-title em { font-style: italic; color: var(--teal); }
+  .hero-title-ar {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 24px; color: var(--gold); font-weight: 400;
+    margin-bottom: 28px; display: block; direction: rtl;
+  }
+
+  .hero-desc {
+    font-size: 17px; line-height: 1.75;
+    color: var(--muted); max-width: 480px;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+  .btn-primary {
+    background: var(--teal); color: white;
+    padding: 16px 36px; border-radius: 50px;
+    text-decoration: none; font-size: 15px; font-weight: 500;
+    transition: all .25s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,107,107,.3); }
+
+  .btn-secondary {
+    color: var(--navy); padding: 16px 28px;
+    text-decoration: none; font-size: 15px; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 8px;
+    border-bottom: 2px solid var(--gold);
+    transition: all .2s;
+  }
+  .btn-secondary:hover { color: var(--teal); }
+
+  .hero-stats {
+    display: flex; gap: 36px; margin-top: 56px;
+    padding-top: 36px; border-top: 1px solid rgba(0,107,107,.12);
+  }
+  .stat-item {}
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 600; color: var(--teal); line-height: 1; }
+  .stat-lbl { font-size: 12px; color: var(--muted); margin-top: 4px; max-width: 80px; line-height: 1.4; }
+
+  .hero-right {
+    position: relative; height: 100vh; overflow: hidden;
+  }
+
+  .hero-image-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--teal) 0%, #004040 60%, var(--navy) 100%);
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0;
+    opacity: 0.06;
+    background-image: repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%);
+    background-size: 30px 30px;
+  }
+
+  .hero-card-float {
+    position: absolute;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--r);
+    padding: 20px 24px;
+    color: white;
+  }
+
+  .card-quote {
+    top: 20%; left: 40px; right: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-style: italic; line-height: 1.5;
+    text-align: center;
+  }
+  .card-quote span { font-size: 13px; font-family: 'DM Sans', sans-serif; font-style: normal; color: rgba(255,255,255,.7); margin-top: 12px; display: block; }
+
+  .card-promise {
+    bottom: 18%; left: 40px;
+    display: flex; flex-direction: column; gap: 10px;
+    min-width: 200px;
+  }
+  .promise-item { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+  .promise-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-light); flex-shrink: 0; }
+
+  .card-badge {
+    bottom: 18%; right: 40px;
+    text-align: center;
+    padding: 16px 20px;
+  }
+  .badge-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 600; color: var(--gold-light); line-height: 1; }
+  .badge-lbl { font-size: 11px; color: rgba(255,255,255,.8); letter-spacing: 1px; }
+
+  /* ─── SECTION TEMPLATE ─── */
+  section { padding: 100px 80px; }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; width: 32px; height: 2px; background: var(--gold); }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 300; line-height: 1.2;
+    color: var(--navy); margin-bottom: 20px;
+  }
+  .section-title strong { font-weight: 600; color: var(--teal); }
+
+  /* ─── À PROPOS ─── */
+  #apropos {
+    background: white;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+
+  .apropos-visual {
+    position: relative;
+  }
+  .apropos-main-block {
+    background: var(--teal);
+    border-radius: 24px;
+    padding: 60px 48px;
+    color: white;
+    position: relative; overflow: hidden;
+  }
+  .apropos-main-block::before {
+    content: 'أمل';
+    position: absolute; right: -20px; bottom: -40px;
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 200px; font-weight: 600; opacity: .06; color: white;
+    line-height: 1;
+  }
+  .apropos-main-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; margin-bottom: 16px; line-height: 1.3; }
+  .apropos-main-block p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,.85); }
+
+  .apropos-accent {
+    position: absolute; bottom: -28px; right: -28px;
+    background: var(--gold);
+    border-radius: 18px;
+    padding: 24px 28px;
+    color: var(--navy);
+  }
+  .apropos-accent .num { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 600; line-height: 1; }
+  .apropos-accent .lbl { font-size: 12px; font-weight: 500; max-width: 100px; margin-top: 4px; line-height: 1.4; }
+
+  .apropos-content .section-desc {
+    font-size: 16px; line-height: 1.85; color: var(--muted);
+    margin-bottom: 36px;
+  }
+
+  .value-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .value-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 20px;
+    background: var(--teal-pale);
+    border-radius: 12px;
+    border-left: 4px solid var(--teal);
+  }
+  .value-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .value-title { font-weight: 600; font-size: 14px; color: var(--navy); }
+  .value-desc { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--cream); }
+  .services-header { text-align: center; margin-bottom: 60px; }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  .service-card {
+    background: white; border-radius: 20px;
+    padding: 36px 32px;
+    transition: all .3s; cursor: default;
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(0,107,107,.08);
+  }
+  .service-card::after {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,107,107,.12); }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon {
+    width: 56px; height: 56px; border-radius: 16px;
+    background: var(--teal-pale); display: flex; align-items: center; justify-content: center;
+    font-size: 26px; margin-bottom: 20px;
+  }
+  .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+  .service-card p { font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 16px; }
+  .service-price { font-size: 13px; font-weight: 600; color: var(--teal); }
+
+  /* ─── COMMENT ÇA MARCHE ─── */
+  #comment {
+    background: var(--navy);
+    color: white;
+  }
+  #comment .section-label { color: var(--gold-light); }
+  #comment .section-label::before { background: var(--gold); }
+  #comment .section-title { color: white; }
+  #comment .section-title strong { color: var(--gold-light); }
+
+  .steps-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; position: relative; margin-top: 60px;
+  }
+  .steps-grid::before {
+    content: ''; position: absolute;
+    top: 32px; left: 8%; right: 8%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+    z-index: 0;
+  }
+
+  .step {
+    text-align: center; position: relative; z-index: 1; padding: 0 20px;
+  }
+  .step-num {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--teal); border: 4px solid var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: white;
+    margin: 0 auto 24px;
+  }
+  .step:nth-child(even) .step-num { background: var(--gold); }
+  .step h4 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: white; margin-bottom: 8px; }
+  .step p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.65); }
+
+  /* ─── TÉMOIGNAGES ─── */
+  #temoignages { background: var(--gold-pale); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+
+  .testimonial {
+    background: white; border-radius: 20px;
+    padding: 32px 28px; position: relative;
+    border: 1px solid rgba(200,149,42,.15);
+  }
+  .testimonial::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px; color: var(--gold-light);
+    position: absolute; top: 10px; left: 24px;
+    line-height: 1;
+  }
+  .testimonial-text { font-size: 15px; line-height: 1.75; color: var(--text); margin-top: 28px; font-style: italic; }
+  .testimonial-author { margin-top: 20px; display: flex; align-items: center; gap: 12px; }
+  .author-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--teal); display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 600; font-size: 16px; flex-shrink: 0;
+  }
+  .author-name { font-weight: 600; font-size: 14px; color: var(--navy); }
+  .author-role { font-size: 12px; color: var(--muted); }
+  .stars { color: var(--gold); font-size: 13px; margin-top: 4px; }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--teal);
+    color: white;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+
+  #contact .section-label { color: rgba(255,255,255,.6); }
+  #contact .section-label::before { background: var(--gold); }
+  #contact .section-title { color: white; }
+  #contact .section-title strong { color: var(--gold-light); }
+
+  .contact-desc { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,.8); margin-bottom: 36px; }
+
+  .contact-items { display: flex; flex-direction: column; gap: 20px; }
+  .contact-item { display: flex; align-items: center; gap: 16px; }
+  .contact-item-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .contact-item-text .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.6); }
+  .contact-item-text .val { font-size: 15px; font-weight: 500; color: white; }
+
+  .contact-form {
+    background: rgba(255,255,255,.1); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 24px; padding: 40px 36px;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.7); display: block; margin-bottom: 8px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 14px 18px;
+    background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+    border-radius: 12px; color: white; font-size: 15px; font-family: 'DM Sans', sans-serif;
+    outline: none; transition: border-color .2s;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.4); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--navy); color: white; }
+  .form-group textarea { height: 100px; resize: none; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .btn-submit {
+    width: 100%; padding: 16px;
+    background: var(--gold); color: var(--navy);
+    border: none; border-radius: 12px;
+    font-size: 15px; font-weight: 600; font-family: 'DM Sans', sans-serif;
+    cursor: pointer; transition: all .2s;
+  }
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,.7);
+    padding: 60px 80px 36px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; margin-bottom: 48px; }
+  .footer-brand .logo { margin-bottom: 16px; }
+  .footer-brand p { font-size: 14px; line-height: 1.8; max-width: 260px; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; color: white; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 18px; }
+  .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,.6); text-decoration: none; margin-bottom: 10px; transition: color .2s; }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+  .social-btn {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 16px; transition: all .2s;
+  }
+  .social-btn:hover { background: var(--teal); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+
+  /* ─── ICÔNES SVG ─── */
+  .icon-svg { width: 22px; height: 22px; display: inline-block; vertical-align: middle; }
+  .contact-item-icon svg { width: 24px; height: 24px; }
+  .service-icon svg { width: 28px; height: 28px; }
+
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 998;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25D366; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; box-shadow: 0 8px 24px rgba(37,211,102,.4);
+    text-decoration: none; transition: all .2s;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+  .hero-left > * { animation: fadeUp .8s ease both; }
+  .hero-left > *:nth-child(1){ animation-delay:.1s }
+  .hero-left > *:nth-child(2){ animation-delay:.2s }
+  .hero-left > *:nth-child(3){ animation-delay:.3s }
+  .hero-left > *:nth-child(4){ animation-delay:.4s }
+  .hero-left > *:nth-child(5){ animation-delay:.5s }
+
+  .card-quote { animation: float 6s ease-in-out infinite; }
+  .card-badge { animation: float 6s ease-in-out infinite 1.5s; }
+
+  /* ─── BANNER URGENCE ─── */
+  .urgence-bar {
+    background: linear-gradient(90deg, var(--gold), #E0A020);
+    color: var(--navy);
+    text-align: center; padding: 10px 20px;
+    font-size: 13px; font-weight: 600; letter-spacing: .5px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 120px 28px 60px; }
+    section { padding: 70px 28px; }
+    #apropos, #contact { grid-template-columns: 1fr; gap: 40px; }
+    .services-grid, .steps-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .steps-grid::before { display: none; }
+    footer { padding: 50px 28px 28px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Barre urgence -->
+<div class="urgence-bar">
+  📞 Besoin urgent ? Appelez-nous maintenant : <strong>+212 6XX XXX XXX</strong> — Réponse sous 2 heures
+</div>
+
+<!-- Navigation -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark">
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#006B6B"/>
+        <path d="M18 62 C16 54 17 44 22 37 C26 31 32 28 36 30 C39 32 40 36 39 41 C38 46 35 50 34 55 C33 60 34 65 36 68 C30 67 24 65 18 62Z" fill="white" opacity="0.92"/>
+        <path d="M82 62 C84 54 83 44 78 37 C74 31 68 28 64 30 C61 32 60 36 61 41 C62 46 65 50 66 55 C67 60 66 65 64 68 C70 67 76 65 82 62Z" fill="white" opacity="0.92"/>
+        <path d="M36 68 C36 76 42 84 50 85 C58 84 64 76 64 68 C64 62 60 57 56 54 C54 52 52 50 50 48 C48 50 46 52 44 54 C40 57 36 62 36 68Z" fill="white" opacity="0.88"/>
+        <path d="M22 37 C21 32 23 27 27 26 C29 25 31 27 30 30" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M27 33 C26 28 28 23 32 22 C34 21 36 23 35 26" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M32 30 C32 25 35 21 39 21 C41 21 42 23 41 26" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M78 37 C79 32 77 27 73 26 C71 25 69 27 70 30" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M73 33 C74 28 72 23 68 22 C66 21 64 23 65 26" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M68 30 C68 25 65 21 61 21 C59 21 58 23 59 26" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M50 42 C50 42 44 37 41 37 C37 37 35 40 35 43 C35 46 37 49 40 51 L50 60 L60 51 C63 49 65 46 65 43 C65 40 63 37 59 37 C56 37 50 42 50 42Z" fill="#C8952A" opacity="0.95"/>
+        <path d="M50 45 C50 45 46 41 44 41 C42 41 41 43 41 44 C41 46 43 48 45 49 L50 53 L55 49 C57 48 59 46 59 44 C59 43 58 41 56 41 C54 41 50 45 50 45Z" fill="white" opacity="0.25"/>
+        <circle cx="44" cy="39" r="1.5" fill="white" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="en">AMAL CARE</span>
+      <span class="ar">رعاية — أمل</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#comment">Comment ça marche</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#espace-famille" style="color:var(--teal);font-weight:600;">📱 Espace Famille</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Demander un devis gratuit →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag"><span></span> Première agence marocaine spécialisée Alzheimer</div>
+    <h1 class="hero-title">
+      L'<em>espoir</em> d'un<br>accompagnement<br>digne
+    </h1>
+    <span class="hero-title-ar">نحن هنا — معك في كل لحظة</span>
+    <p class="hero-desc">
+      Amal Care place auprès de votre proche une aide formée spécifiquement à la maladie d'Alzheimer. Parce que votre famille mérite mieux qu'une aide ordinaire.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">🌿 Demander une évaluation gratuite</a>
+      <a href="#comment" class="btn-secondary">Comment ça marche →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">40h</div>
+        <div class="stat-lbl">de formation spécialisée Alzheimer</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">&lt;72h</div>
+        <div class="stat-lbl">délai de mise en place</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">7j/7</div>
+        <div class="stat-lbl">suivi et disponibilité</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-image-bg"></div>
+    <div class="hero-pattern"></div>
+
+    <div class="hero-card-float card-quote">
+      « Avec Amal Care, ma mère a retrouvé un visage serein. Et moi, je respire enfin. »
+      <span>— Khadija, fille aidante · Agdal, Rabat</span>
+    </div>
+
+    <div class="hero-card-float card-promise">
+      <div class="promise-item"><div class="promise-dot"></div> Aides certifiées & vérifiées</div>
+      <div class="promise-item"><div class="promise-dot"></div> Rapport mensuel à la famille</div>
+      <div class="promise-item"><div class="promise-dot"></div> Remplacement garanti 24h</div>
+      <div class="promise-item"><div class="promise-dot"></div> Coordination médicale incluse</div>
+    </div>
+
+    <div class="hero-card-float card-badge">
+      <div class="badge-num">200K</div>
+      <div class="badge-lbl">PATIENTS<br>AU MAROC</div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos">
+  <div class="apropos-visual">
+    <div class="apropos-main-block">
+      <h3>La première agence entièrement dédiée à la maladie d'Alzheimer au Maroc</h3>
+      <p>
+        Fondée par Fouad Ayadi, ingénieur et entrepreneur engagé, Amal Care est née d'un constat simple : les 200 000 patients marocains atteints d'Alzheimer méritent des soins spécialisés, pas une aide ménagère ordinaire.
+      </p>
+    </div>
+    <div class="apropos-accent">
+      <div class="num">100%</div>
+      <div class="lbl">spécialisé Alzheimer & démences</div>
+    </div>
+  </div>
+
+  <div class="apropos-content">
+    <div class="section-label">Notre mission</div>
+    <h2 class="section-title">Chaque famille mérite de <strong>respirer</strong></h2>
+    <p class="section-desc">
+      Nous recrutons, formons et plaçons des aides aidantes spécialisées Alzheimer. Chaque aide Amal Care suit un cursus rigoureux de 40 heures avant sa première mission — stimulation cognitive, gestion des comportements perturbateurs, soutien émotionnel.
+    </p>
+
+    <ul class="value-list">
+      <li class="value-item">
+        <div class="value-icon">🎓</div>
+        <div>
+          <div class="value-title">Formation dédiée de 40 heures</div>
+          <div class="value-desc">Stimulation cognitive, gestion des comportements Alzheimer, hygiène adaptée, soutien aux familles</div>
+        </div>
+      </li>
+      <li class="value-item">
+        <div class="value-icon">🛡️</div>
+        <div>
+          <div class="value-title">Sécurité & confiance garanties</div>
+          <div class="value-desc">Vérification casier judiciaire, diplômes et références vérifiés, charte éthique signée</div>
+        </div>
+      </li>
+      <li class="value-item">
+        <div class="value-icon">📋</div>
+        <div>
+          <div class="value-title">Suivi mensuel personnalisé</div>
+          <div class="value-desc">Rapport mensuel envoyé à la famille, coordination avec le médecin traitant</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div class="section-label" style="justify-content:center;">Nos formules</div>
+    <h2 class="section-title" style="text-align:center;">Des soins adaptés à <strong>chaque situation</strong></h2>
+    <p style="color:var(--muted);max-width:520px;margin:0 auto;font-size:16px;line-height:1.7;">
+      Chaque famille est unique. Nous construisons ensemble le plan d'accompagnement le plus adapté à votre proche.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#006B6B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </div>
+      <h3>Demi-journée</h3>
+      <p>Présence 4h par jour — toilette, repas, stimulation cognitive, accompagnement activités du quotidien.</p>
+      <div class="service-price">À partir de 80 MAD/heure · Lun–Sam</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#006B6B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <h3>Journée complète</h3>
+      <p>Prise en charge globale 8h — soins, repas, stimulation, lien social, coordination avec la famille.</p>
+      <div class="service-price">À partir de 75 MAD/heure · Lun–Sam</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#006B6B" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </div>
+      <h3>Garde 24h/7j</h3>
+      <p>Deux aides en rotation — prise en charge nocturne incluse pour les situations complexes.</p>
+      <div class="service-price">À partir de 5 500 MAD/semaine</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#006B6B" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+      </div>
+      <h3>Évaluation initiale</h3>
+      <p>Visite à domicile, bilan cognitif simplifié, plan de soin personnalisé rédigé par notre coordinatrice.</p>
+      <div class="service-price">Gratuite pour tout contrat signé</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#006B6B" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3>Formation aidant familial</h3>
+      <p>Session de 4h pour les proches : techniques, ressources, gestion du stress de l'aidant.</p>
+      <div class="service-price">300 MAD par session</div>
+    </div>
+    <div class="service-card" style="background:var(--teal);border-color:var(--teal);">
+      <div class="service-icon" style="background:rgba(255,255,255,.15);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <h3 style="color:white;">MRE — À distance</h3>
+      <p style="color:rgba(255,255,255,.8);">Vous êtes en Europe ? Votre proche est au Maroc. Rapport hebdomadaire, visioconférence mensuelle incluse.</p>
+      <div class="service-price" style="color:var(--gold-light);">Solution complète — Paiement en devises accepté</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section id="comment">
+  <div class="section-label">Processus</div>
+  <h2 class="section-title">De votre appel à la <strong>première visite</strong><br>en moins de 72 heures</h2>
+
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Vous nous contactez</h4>
+      <p>Appel, WhatsApp ou formulaire. Réponse garantie sous 2 heures. Nos équipes restent à l'écoute 7j/7.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Évaluation gratuite</h4>
+      <p>Notre coordinatrice se déplace à votre domicile pour rencontrer votre proche et établir le plan de soin.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Présentation de l'aide</h4>
+      <p>Nous vous présentons l'aide sélectionnée. Vous la rencontrez avant qu'elle commence. Votre accord prime.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Début de la prise en charge</h4>
+      <p>Mise en place sous 72h. Suivi mensuel, rapport famille, coordination médicale en continu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section id="temoignages">
+  <div class="section-label">Ils nous font confiance</div>
+  <h2 class="section-title">Ce que disent les <strong>familles</strong></h2>
+
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="testimonial-text">
+        Depuis qu'Amal Care s'occupe de ma mère, je dors la nuit. L'aide qu'ils ont placée la connaît par cœur, elle sait comment la calmer quand elle devient anxieuse. C'est inestimable.
+      </div>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <div class="author-name">Sanaa B.</div>
+          <div class="author-role">Fille aidante — Hay Riad, Rabat</div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="testimonial-text">
+        Je suis à Paris, mon père est à Rabat. Amal Care m'envoie un rapport chaque semaine avec une photo. Je me sens présent malgré la distance. Merci du fond du cœur.
+      </div>
+      <div class="testimonial-author">
+        <div class="author-avatar">Y</div>
+        <div>
+          <div class="author-name">Youssef A.</div>
+          <div class="author-role">MRE — Paris, France</div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="testimonial-text">
+        Le médecin nous avait dit que nous ne pouvions rien faire de plus. L'équipe Amal Care nous a montré qu'avec la bonne approche, notre proche peut encore avoir des moments de joie.
+      </div>
+      <div class="testimonial-author">
+        <div class="author-avatar">F</div>
+        <div>
+          <div class="author-name">Fatima E.</div>
+          <div class="author-role">Aidante familiale — Agdal, Rabat</div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACE FAMILLE -->
+<section id="espace-famille" style="background:var(--navy);padding:100px 80px;overflow:hidden;position:relative;">
+
+  <!-- Fond décoratif -->
+  <div style="position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(45deg,white 0,white 1px,transparent 0,transparent 50%);background-size:28px 28px;pointer-events:none;"></div>
+  <div style="position:absolute;right:-80px;bottom:-80px;font-family:serif;font-size:320px;color:white;opacity:0.03;line-height:1;pointer-events:none;">أمل</div>
+
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;">
+
+    <!-- Texte gauche -->
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(200,149,42,0.15);border:1px solid rgba(200,149,42,0.3);color:var(--gold);padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;">
+        <span style="width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block;"></span>
+        NOUVEAU — Application de suivi
+      </div>
+
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,50px);font-weight:300;color:white;line-height:1.2;margin-bottom:20px;">
+        L'<em style="font-style:italic;color:var(--gold);">Espace Famille</em><br>Amal Care
+      </h2>
+
+      <p style="font-size:16px;line-height:1.85;color:rgba(255,255,255,0.7);margin-bottom:32px;">
+        Suivez en temps réel le bien-être de votre proche. Notre application permet à l'aide, à la famille et au médecin de rester connectés autour du patient — où que vous soyez dans le monde.
+      </p>
+
+      <!-- Fonctionnalités -->
+      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:40px;">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,0.06);border-radius:14px;border:1px solid rgba(255,255,255,0.08);">
+          <div style="width:40px;height:40px;border-radius:12px;background:rgba(0,107,107,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          </div>
+          <div>
+            <div style="font-weight:600;font-size:14px;color:white;">Journal quotidien de l'aide</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px;">Humeur, alimentation, médicaments, observations</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,0.06);border-radius:14px;border:1px solid rgba(255,255,255,0.08);">
+          <div style="width:40px;height:40px;border-radius:12px;background:rgba(200,149,42,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07"/><path d="M3.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </div>
+          <div>
+            <div style="font-weight:600;font-size:14px;color:white;">Alertes instantanées</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px;">Notifications immédiates en cas d'incident</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,0.06);border-radius:14px;border:1px solid rgba(255,255,255,0.08);">
+          <div style="width:40px;height:40px;border-radius:12px;background:rgba(39,174,96,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <div style="font-weight:600;font-size:14px;color:white;">Accès famille & médecin</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px;">MRE inclus — rapport hebdomadaire à distance</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,0.06);border-radius:14px;border:1px solid rgba(255,255,255,0.08);">
+          <div style="width:40px;height:40px;border-radius:12px;background:rgba(142,68,173,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8E44AD" stroke-width="2" stroke-linecap="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/></svg>
+          </div>
+          <div>
+            <div style="font-weight:600;font-size:14px;color:white;">Évaluation de l'aide</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px;">Feedback famille · points forts · axes d'amélioration</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boutons accès -->
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://amalcaremaroc.netlify.app/app" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:white;padding:14px 28px;border-radius:50px;text-decoration:none;font-size:15px;font-weight:600;transition:all .2s;box-shadow:0 8px 24px rgba(0,107,107,0.4);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+          Accéder à l'app
+        </a>
+        <a href="https://wa.me/21260667203?text=Bonjour%20Amal%20Care%2C%20je%20voudrais%20acc%C3%A9der%20%C3%A0%20l%27espace%20famille" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.08);color:white;padding:14px 28px;border-radius:50px;text-decoration:none;font-size:15px;font-weight:600;border:1px solid rgba(255,255,255,0.2);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l4.93-1.37A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          Demander un accès
+        </a>
+      </div>
+
+      <!-- Badge disponibilité -->
+      <div style="margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.45);">
+        <span style="width:6px;height:6px;border-radius:50%;background:#27AE60;display:inline-block;"></span>
+        Disponible sur Web · Android · iOS (bientôt) · Mode hors-ligne inclus
+      </div>
+    </div>
+
+    <!-- Mockup téléphone droite -->
+    <div style="display:flex;justify-content:center;align-items:center;">
+      <div style="position:relative;">
+
+        <!-- Téléphone -->
+        <div style="width:260px;background:#111;border-radius:36px;padding:10px;box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.08);position:relative;">
+
+          <!-- Encoche -->
+          <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:22px;background:#111;border-radius:0 0 14px 14px;z-index:10;"></div>
+
+          <!-- Écran -->
+          <div style="background:var(--cream);border-radius:28px;overflow:hidden;height:520px;position:relative;">
+
+            <!-- Status bar app -->
+            <div style="background:rgba(250,248,244,0.97);padding:28px 12px 6px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,107,107,0.1);">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
+                  <circle cx="50" cy="50" r="48" fill="#006B6B"/>
+                  <path d="M18 62 C16 54 17 44 22 37 C26 31 32 28 36 30 C39 32 40 36 39 41 C38 46 35 50 34 55 C33 60 34 65 36 68 C30 67 24 65 18 62Z" fill="white" opacity="0.92"/>
+                  <path d="M82 62 C84 54 83 44 78 37 C74 31 68 28 64 30 C61 32 60 36 61 41 C62 46 65 50 66 55 C67 60 66 65 64 68 C70 67 76 65 82 62Z" fill="white" opacity="0.92"/>
+                  <path d="M36 68 C36 76 42 84 50 85 C58 84 64 76 64 68 C64 62 60 57 56 54 C54 52 52 50 50 48 C48 50 46 52 44 54 C40 57 36 62 36 68Z" fill="white" opacity="0.88"/>
+                  <path d="M50 42 C50 42 44 37 41 37 C37 37 35 40 35 43 C35 46 37 49 40 51 L50 60 L60 51 C63 49 65 46 65 43 C65 40 63 37 59 37 C56 37 50 42 50 42Z" fill="#C8952A" opacity="0.95"/>
+                </svg>
+                <div>
+                  <div style="font-size:8px;font-weight:800;color:var(--navy);letter-spacing:1px;line-height:1;">AMAL CARE</div>
+                  <div style="font-size:6px;color:var(--gold);font-family:serif;">أمل — رعاية</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:4px;align-items:center;">
+                <div style="background:#E8F7F7;border-radius:6px;padding:2px 6px;font-size:7px;font-weight:700;color:var(--teal);">● Sync</div>
+                <span style="font-size:12px;">🔔</span>
+              </div>
+            </div>
+
+            <!-- Contenu patient -->
+            <div style="background:linear-gradient(135deg,#0D1F2D 0%,#006B6B 100%);padding:14px 14px 12px;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+                <div style="width:38px;height:38px;border-radius:50%;background:#C8952A;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:white;flex-shrink:0;">AB</div>
+                <div>
+                  <div style="color:white;font-weight:700;font-size:12px;">Ahmed Benali</div>
+                  <div style="color:rgba(255,255,255,0.6);font-size:9px;">78 ans · Alzheimer Modéré</div>
+                </div>
+                <div style="margin-left:auto;background:rgba(39,174,96,0.25);border-radius:8px;padding:3px 7px;font-size:8px;color:#27AE60;font-weight:700;">Actif</div>
+              </div>
+              <!-- Médicaments mini -->
+              <div style="background:rgba(255,255,255,0.1);border-radius:10px;padding:8px 10px;">
+                <div style="font-size:8px;color:rgba(255,255,255,0.5);letter-spacing:1px;margin-bottom:6px;">MÉDICAMENTS DU JOUR</div>
+                <div style="display:flex;flex-direction:column;gap:4px;">
+                  <div style="display:flex;justify-content:space-between;"><span style="font-size:9px;color:white;">Donepézil 10mg</span><span style="font-size:9px;">✅ 08:00</span></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="font-size:9px;color:white;">Metformine 500mg</span><span style="font-size:9px;">⏳ 12:00</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rapport du jour mini -->
+            <div style="padding:10px 12px;">
+              <div style="background:white;border-radius:12px;padding:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:8px;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                  <div>
+                    <div style="font-size:10px;font-weight:700;color:var(--navy);">Rapport du jour</div>
+                    <div style="font-size:8px;color:var(--muted);">Fatima Zohra · 08:30</div>
+                  </div>
+                  <span style="font-size:18px;">😊</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+                  <div style="background:var(--cream);border-radius:6px;padding:5px 7px;">
+                    <div style="font-size:8px;color:var(--muted);">🍽️ Alimentation</div>
+                    <div style="display:flex;gap:2px;margin-top:3px;">
+                      <div style="width:12px;height:4px;border-radius:2px;background:var(--gold);"></div>
+                      <div style="width:12px;height:4px;border-radius:2px;background:var(--gold);"></div>
+                      <div style="width:12px;height:4px;border-radius:2px;background:var(--gold);"></div>
+                      <div style="width:12px;height:4px;border-radius:2px;background:#E8ECEF;"></div>
+                      <div style="width:12px;height:4px;border-radius:2px;background:#E8ECEF;"></div>
+                    </div>
+                  </div>
+                  <div style="background:var(--cream);border-radius:6px;padding:5px 7px;">
+                    <div style="font-size:8px;color:var(--muted);">💧 Hydratation</div>
+                    <div style="display:flex;gap:2px;margin-top:3px;">
+                      <div style="width:12px;height:4px;border-radius:2px;background:#3498DB;"></div>
+                      <div style="width:12px;height:4px;border-radius:2px;background:#3498DB;"></div>
+                      <div style="width:12px;height:4px;border-radius:2px;background:#3498DB;"></div>
+                      <div style="width:12px;height:4px;border-radius:2px;background:#3498DB;"></div>
+                      <div style="width:12px;height:4px;border-radius:2px;background:#E8ECEF;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top:6px;padding:5px 7px;background:var(--cream);border-radius:6px;font-size:8px;color:#444;line-height:1.5;">
+                  Bonne matinée. Ahmed a reconnu sa fille sur la photo. A mangé la moitié du petit-déjeuner...
+                </div>
+              </div>
+
+              <!-- Actions rapides mini -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                <div style="background:var(--teal);border-radius:10px;padding:8px 10px;">
+                  <div style="font-size:12px;margin-bottom:2px;">📝</div>
+                  <div style="font-size:9px;color:white;font-weight:600;">Nouveau rapport</div>
+                </div>
+                <div style="background:var(--navy);border-radius:10px;padding:8px 10px;">
+                  <div style="font-size:12px;margin-bottom:2px;">📊</div>
+                  <div style="font-size:9px;color:white;font-weight:600;">Historique</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom nav mini -->
+            <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,0.97);border-top:1px solid #E8ECEF;display:flex;justify-content:space-around;padding:6px 0 10px;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:1px;">
+                <span style="font-size:14px;">🏠</span>
+                <span style="font-size:7px;color:var(--teal);font-weight:700;">Accueil</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:1px;">
+                <span style="font-size:14px;">📊</span>
+                <span style="font-size:7px;color:var(--muted);">Suivi</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:1px;">
+                <div style="width:32px;height:32px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin-top:-12px;box-shadow:0 3px 10px rgba(0,107,107,0.4);">
+                  <span style="font-size:14px;">📝</span>
+                </div>
+                <span style="font-size:7px;color:var(--muted);">Rapport</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:1px;">
+                <span style="font-size:14px;">💊</span>
+                <span style="font-size:7px;color:var(--muted);">Médoc</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:1px;">
+                <span style="font-size:14px;">⭐</span>
+                <span style="font-size:7px;color:var(--muted);">Avis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges flottants -->
+        <div style="position:absolute;top:-20px;right:-50px;background:white;border-radius:14px;padding:10px 14px;box-shadow:0 8px 30px rgba(0,0,0,0.15);white-space:nowrap;">
+          <div style="font-size:10px;font-weight:700;color:var(--navy);">✅ Rapport envoyé</div>
+          <div style="font-size:9px;color:var(--muted);">Famille notifiée · 08:31</div>
+        </div>
+
+        <div style="position:absolute;bottom:60px;left:-60px;background:var(--gold);border-radius:14px;padding:10px 14px;box-shadow:0 8px 30px rgba(200,149,42,0.3);white-space:nowrap;">
+          <div style="font-size:10px;font-weight:700;color:var(--navy);">⭐ 4.9 / 5</div>
+          <div style="font-size:9px;color:var(--navy);opacity:0.7;">Fatima Zohra</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <div class="section-label">Nous contacter</div>
+    <h2 class="section-title">Commençons par <strong>une conversation</strong></h2>
+    <p class="contact-desc">
+      Chaque situation est unique. Appelez-nous, écrivez-nous, ou remplissez le formulaire. Nous vous répondons sous 2 heures — même le week-end.
+    </p>
+
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14a16 16 0 006.95 6.95l1.4-1.4a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <div class="lbl">Téléphone & WhatsApp</div>
+          <div class="val">+212 606 672 403</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <div class="lbl">Email</div>
+          <div class="val">AmalCare.maroc@gmail.com</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <div class="lbl">Zone d'intervention</div>
+          <div class="val">Rabat · Salé · Kénitra · Nador · Oujda</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <div class="lbl">Disponibilité</div>
+          <div class="val">7j/7 · 8h–20h </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Votre prénom</label>
+        <input type="text" placeholder="Khadija">
+      </div>
+      <div class="form-group">
+        <label>Votre nom</label>
+        <input type="text" placeholder="Benali">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Téléphone / WhatsApp</label>
+      <input type="tel" placeholder="+212 606 672 403">
+    </div>
+    <div class="form-group">
+      <label>Ville</label>
+      <select>
+        <option>Rabat</option>
+        <option>Salé</option>
+        <option>Kénitra</option>
+        <option>Oujda</option>
+        <option>Nador</option>
+        <option>Autre ville</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Situation de votre proche</label>
+      <select>
+        <option>Alzheimer stade léger</option>
+        <option>Alzheimer stade modéré</option>
+        <option>Alzheimer stade avancé</option>
+        <option>Démence apparentée</option>
+        <option>Pas encore de diagnostic</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Message (optionnel)</label>
+      <textarea placeholder="Décrivez brièvement la situation de votre proche…"></textarea>
+    </div>
+    <button class="btn-submit">Demander une évaluation gratuite →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <div class="logo-mark">أ</div>
+        <div class="logo-text">
+          <span class="en" style="color:white;">AMAL CARE</span>
+          <span class="ar">رعاية — أمل</span>
+        </div>
+      </a>
+      <p style="margin-top:12px;">Première agence marocaine spécialisée dans l'accompagnement à domicile des patients Alzheimer. Rabat · Salé · Kénitra · Nador · Oujda.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" title="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" class="social-btn" title="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://wa.me/21260667203" class="social-btn" title="WhatsApp"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l4.93-1.37A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+        <a href="#" class="social-btn" title="TikTok"><svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.73a4.85 4.85 0 01-1.01-.04z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Aide demi-journée</a>
+      <a href="#">Garde journée complète</a>
+      <a href="#">Présence 24h/7j</a>
+      <a href="#">Service MRE</a>
+      <a href="#">Formation aidants</a>
+    </div>
+    <div class="footer-col">
+      <h4>À propos</h4>
+      <a href="#">Notre mission</a>
+      <a href="#">Notre équipe</a>
+      <a href="#">Notre formation</a>
+      <a href="#">Partenaires</a>
+      <a href="#">Rejoindre l'équipe</a>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <a href="#">Guide Alzheimer Maroc</a>
+      <a href="#">Association AMAMA</a>
+      <a href="#">Maroc Alzheimer</a>
+      <a href="#">Blog aidants</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Amal Care SARL-AU · Tous droits réservés · RC Rabat [XXXXX]</span>
+    <span>Fait avec ❤️ au Maroc · <a href="#" style="color:var(--gold-light);text-decoration:none;">Mentions légales</a> · <a href="#" style="color:var(--gold-light);text-decoration:none;">Politique de confidentialité</a></span>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/21260667203" class="wa-float" target="_blank" title="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.428a.75.75 0 00.916.916l5.571-1.476A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.524-5.187-1.435l-.371-.22-3.308.876.877-3.309-.22-.371A9.962 9.962 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+  // Smooth nav background
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,.08)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // Form submit feedback
+  document.querySelector('.btn-submit').addEventListener('click', function(e) {
+    e.preventDefault();
+    this.textContent = '✅ Demande envoyée — Nous vous rappelons sous 24h';
+    this.style.background = '#27AE60';
+    this.style.color = 'white';
+  });
+</script>
+</body>
+</html>
